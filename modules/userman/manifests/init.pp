@@ -35,14 +35,20 @@
 # Authors
 # -------
 #
-# Author Name <author@domain.com>
+# Ryan Flett <s3633011@student.rmit.edu.au>
 #
 # Copyright
 # ---------
 #
-# Copyright 2016 Your name here, unless otherwise noted.
+# Copyright 2016 Ryan Flett
 #
 class userman {
-
-
+	user { 'becca':
+		ensure		=> 'present',
+		uid		=> '10013011',
+		shell		=> '/bin/bash',
+		home		=> '/home/becca',
+		groups		=> ['sysadmin', 'cars'],
+		password	=> '$6$9D0f3cny4QKXlSRH$sfHCKWH3T5hzcK1QPjiVbZa1W9x4P4XgYRNoxbbfCeXBDJx/9IzyTrRHHKw1tF3gw/HKZoA1OMtlls1KPxHHR/',
+	}		
 }
