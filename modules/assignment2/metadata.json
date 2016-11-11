@@ -1,0 +1,14 @@
+{
+  "name": "usap-assignment2",
+  "version": "0.1.0",
+  "author": "Ryan Flett (s3633011)",
+  "summary": "CPT264 Assignment 2 Milestone 2",
+  "license": "Apache-2.0",
+  "source": "s3633011@titan.csit.rmit.edu.au:s3633011-usap-a2-m2",
+  "project_page": null,
+  "issues_url": "s3633011@student.rmit.edu.au",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
