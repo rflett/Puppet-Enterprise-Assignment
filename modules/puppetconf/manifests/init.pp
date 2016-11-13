@@ -50,8 +50,4 @@ class puppetconf {
                 ],
         }	
 
-#	exec { '/usr/local/bin/puppet agent config set runinterval 1200': 
-#		cwd		=> '/usr/local/bin',
-#	}
-
 }
