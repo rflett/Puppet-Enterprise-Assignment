@@ -44,5 +44,12 @@ node default {
   include packages
   include packages::openssh 
   include packages::httpd
+  include packages::emacs
+  include packages::gcc
+  include packages::gdb
+  include packages::mysql
+  include packages::sshfs
+  include packages::vim
+  include packages::vncserver
 }
 
