@@ -19,3 +19,6 @@ include packages::mysql
 include packages::sshfs
 include packages::vim
 include packages::vncserver
+include packages::tmux
+include packages::dia2code
+include packages::lynx
