@@ -37,4 +37,12 @@ class packages::openssh {
     subscribe => File['/etc/ssh/sshd_config'],
   }
 
+  augeas { 'sshd_config':
+    context => '/files/etc/ssh/sshd_config',
+    changes => [
+      'set PermitRootLogin no',
+    ],
+    require => File['/etc/ssh/sshd_config'],
+  }
+
 }

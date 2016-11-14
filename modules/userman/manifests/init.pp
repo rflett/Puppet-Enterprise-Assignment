@@ -94,7 +94,7 @@ class userman {
     shell      => '/bin/csh',
     managehome => true,
     home       => '/home/fred',
-    groups     => ['trucks', 'cars'],
+    groups     => ['trucks', 'cars', 'wheel'],
     password   => '$6$9D0f3cny4QKXlSRH$sfHCKWH3T5hzcK1QPjiVbZa1W9x4P4XgYRNoxbbfCeXBDJx/9IzyTrRHHKw1tF3gw/HKZoA1OMtlls1KPxHHR/',
   }
 

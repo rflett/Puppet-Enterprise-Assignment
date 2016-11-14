@@ -27,4 +27,13 @@ class packages::httpd {
     subscribe => File['/etc/httpd/conf/httpd.conf'],
   }
 
+  augeas { 'httpd.conf':
+    context => '/files/etc/httpd/conf/httpd.conf',
+    changes => [
+      "set directive[7]/arg '\"/var/www/s3633011\"'",
+      "set Directory[3]/arg '\"/var/www/s3633011\"'",
+    ],
+    require => File['/etc/httpd/conf/httpd.conf'],
+  }
+
 }
