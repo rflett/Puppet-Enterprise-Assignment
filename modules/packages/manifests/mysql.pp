@@ -2,16 +2,16 @@
 class packages::mysql {
 
   package { 'mysql-server':
-    ensure  =>  'present',
+    ensure => 'present',
   }
-  
+
   file { '/etc/mysql':
     ensure  => 'directory',
     owner   => 'root',
     group   => 'root',
     mode    => '0640',
     require => Package['mysql-server'],
-        }
+  }
 
   file { '/etc/mysql/my.cnf':
     ensure  => 'file',
@@ -20,11 +20,11 @@ class packages::mysql {
     mode    => '0640',
     require => Package['mysql-server'],
   }
-  
+
   service { 'mysqld':
     ensure    => 'running',
-	enable    => true,
-	subscribe => File['/etc/mysql/my.cnf'],
+    enable    => true,
+    subscribe => File['/etc/mysql/my.cnf'],
   }
 
 }

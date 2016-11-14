@@ -1,7 +1,7 @@
 # Install and configure gdb
 class packages::gdb {
 
-  package { 'gdb': 
+  package { 'gdb':
     ensure => 'present',
   }
 

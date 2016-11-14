@@ -44,10 +44,10 @@
 #
 class puppetconf {
 
-	augeas { 'puppet.conf':
-                changes         => [
-                        'set /files/etc/puppetlabs/puppet/puppet.conf/agent/runinterval 1200',
-                ],
-        }	
+  augeas { 'puppet.conf':
+    changes => [
+      'set /files/etc/puppetlabs/puppet/puppet.conf/agent/runinterval 1200',
+    ],
+  }
 
 }

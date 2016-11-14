@@ -1,10 +1,10 @@
 # Install and configure VNCserver
 class packages::vncserver {
 
-  package { 'vnc-server': 
+  package { 'vnc-server':
     ensure => 'present',
   }
-  
+
   file { '/etc/sysconfig':
     ensure  => 'directory',
     owner   => 'root',
@@ -20,11 +20,11 @@ class packages::vncserver {
     mode    => '0640',
     require => Package['vnc-server'],
   }
-  
+
   service { 'vncserver':
     ensure    => 'running',
-	enable    => true,
-	subscribe => File['/etc/sysconfig/vncservers'],
+    enable    => true,
+    subscribe => File['/etc/sysconfig/vncservers'],
   }
 
 }
