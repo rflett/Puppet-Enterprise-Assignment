@@ -1,7 +1,7 @@
 # Install and configure mysql
 class packages::mysql {
 
-  package { 'mysql-server':
+  package { 'mysql':
     ensure => 'present',
   }
 
@@ -10,7 +10,7 @@ class packages::mysql {
     owner   => 'root',
     group   => 'root',
     mode    => '0640',
-    require => Package['mysql-server'],
+    require => Package['mysql'],
   }
 
   file { '/etc/mysql/my.cnf':
@@ -18,13 +18,7 @@ class packages::mysql {
     owner   => 'root',
     group   => 'root',
     mode    => '0640',
-    require => Package['mysql-server'],
-  }
-
-  service { 'mysqld':
-    ensure    => 'running',
-    enable    => true,
-    subscribe => File['/etc/mysql/my.cnf'],
+    require => Package['mysql'],
   }
 
 }

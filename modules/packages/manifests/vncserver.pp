@@ -21,10 +21,4 @@ class packages::vncserver {
     require => Package['vnc-server'],
   }
 
-  service { 'vncserver':
-    ensure    => 'running',
-    enable    => true,
-    subscribe => File['/etc/sysconfig/vncservers'],
-  }
-
 }
