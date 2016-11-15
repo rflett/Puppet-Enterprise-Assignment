@@ -55,4 +55,5 @@ node default {
   include packages::tmux
   include packages::dia2code
   include packages::lynx
+  include sysman
 }
