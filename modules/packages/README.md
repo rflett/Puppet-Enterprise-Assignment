@@ -6,7 +6,7 @@
 2. [Module Description](#module-description)
 3. [Setup - The basics of getting started with packages](#setup)
     * [What packages affects](#what-packages-affects)
-5. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
+4. [Reference](#reference)
 ## Overview
 
 Package installation and configuration.
