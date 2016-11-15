@@ -38,7 +38,7 @@ class userman::sshfs_setup {
     group  => 'root',
     mode   => '0640',
   }
-  
+
   # Ensure the rsa public key file exists
   file { '/home/becca/.ssh/titan_id.pub':
     ensure  => 'file',
