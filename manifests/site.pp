@@ -39,16 +39,20 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  
+
   $time = generate('/bin/date', '+%H:%M:%S')
-  
-  notice("Agent run starting at ${time}".)
-  
+
+  notify{"Agent run starting at ${time}.":}
+
+  package {'ruby-augeas':
+    ensure => 'present',
+  }
+
   include userman
   include userman::sshfs_setup
   include puppetconf
   include packages
-  include packages::openssh 
+  include packages::openssh
   include packages::httpd
   include packages::emacs
   include packages::gcc
