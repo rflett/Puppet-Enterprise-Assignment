@@ -36,17 +36,25 @@ File { backup => 'main' }
 # specified in the console for that node.
 
 node default {
+  # Get current time
   $time = generate('/bin/date', '+%H:%M:%S')
 
+  # Display time when running puppet agent
   notify{"Agent run starting at ${time}.":}
 
+  # Ensure augeas is installed, used for config editing
   package {'ruby-augeas':
     ensure => 'present',
   }
 
+  # User management classes
   include userman
   include userman::sshfs_setup
+  
+  # Puppet configuration classes
   include puppetconf
+  
+  # Package installation and configuration classes
   include packages
   include packages::openssh
   include packages::httpd
@@ -60,6 +68,8 @@ node default {
   include packages::tmux
   include packages::dia2code
   include packages::lynx
+  
+  # System management classes
   include sysman
 
 }
