@@ -1,10 +1,25 @@
-# Install and configure mysql
+# Class: packages::mysql
+# ===========================
+#
+# Installs and configures MySQL
+#
+# Authors
+# -------
+#
+# Ryan Flett <s3633011@student.rmit.edu.au>
+#
+# Copyright
+# -------
+#
+# Copyright Ryan Flett 2016
 class packages::mysql {
 
+  # Install mysql package
   package { 'mysql':
     ensure => 'present',
   }
 
+  # Ensure mysql config dir exists
   file { '/etc/mysql':
     ensure  => 'directory',
     owner   => 'root',
@@ -13,6 +28,7 @@ class packages::mysql {
     require => Package['mysql'],
   }
 
+  # Ensure mysql config file exists
   file { '/etc/mysql/my.cnf':
     ensure  => 'file',
     owner   => 'root',

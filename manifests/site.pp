@@ -36,10 +36,6 @@ File { backup => 'main' }
 # specified in the console for that node.
 
 node default {
-  # This is where you can declare classes for all nodes.
-  # Example:
-  #   class { 'my_class': }
-
   $time = generate('/bin/date', '+%H:%M:%S')
 
   notify{"Agent run starting at ${time}.":}
@@ -65,4 +61,5 @@ node default {
   include packages::dia2code
   include packages::lynx
   include sysman
+
 }
