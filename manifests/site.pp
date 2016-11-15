@@ -50,10 +50,10 @@ node default {
   # User management classes
   include userman
   include userman::sshfs_setup
-  
+
   # Puppet configuration classes
   include puppetconf
-  
+
   # Package installation and configuration classes
   include packages
   include packages::openssh
@@ -68,7 +68,7 @@ node default {
   include packages::tmux
   include packages::dia2code
   include packages::lynx
-  
+
   # System management classes
   include sysman
 
