@@ -39,6 +39,11 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
+  
+  $time = generate('/bin/date', '+%H:%M:%S')
+  
+  notice("Agent run starting at ${time}".)
+  
   include userman
   include userman::sshfs_setup
   include puppetconf
