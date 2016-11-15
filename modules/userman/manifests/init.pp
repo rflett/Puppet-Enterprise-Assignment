@@ -113,4 +113,12 @@ class userman {
     key  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDShliewlx31UPTBS1Gms9mhjOCjOG5Lqh9s1kjafKuk1d2XOiydAK0cf44XKrGWcfx4jBUl2aWD0ZjDRz9GMGXSix6GIP/aDXeATyCckiBs9dZUAKQrd1QoDnl+B8rNp0lmBkipBkoZqrRTPFpfG2iMPC7rAOcOPxlGaThRQYtjDplFFaDUd/chQMq7w/sc67nD4zXlJrE7S1wtJ+10WnZwPu4XJNNkMr9DnaQuQIh9Bvbl5UoWeql3AhAm2GIj54KljXruJ8P7533ddCgFOO320/bRksUey9ofnzGV0vSk3lppsc5+t6qpe2xwCGp0q40eAidd1bNVuaUD7xz/zqZ',
   }
 
+  file { '/etc/profile.d/bin.sh':
+    ensure  => 'file',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0640',
+    content => 'export PATH=$PATH:/usr/local/bin',
+  }
+
 }

@@ -21,6 +21,14 @@ class packages::httpd {
     require => Package['httpd'],
   }
 
+  file { '/var/www/s3633011':
+    ensure  => 'directory',
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0640',
+    require => Package['httpd'],
+  }
+
   service { 'httpd':
     ensure    => 'running',
     enable    => true,
@@ -33,7 +41,7 @@ class packages::httpd {
       "set directive[7]/arg '\"/var/www/s3633011\"'",
       "set Directory[3]/arg '\"/var/www/s3633011\"'",
     ],
-    require => File['/etc/httpd/conf/httpd.conf'],
+    require => File['/etc/httpd/conf/httpd.conf', '/var/www/s3633011'],
   }
 
 }

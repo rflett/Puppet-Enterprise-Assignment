@@ -40,6 +40,7 @@ node default {
   # Example:
   #   class { 'my_class': }
   include userman
+  include userman::sshfs_setup
   include puppetconf
   include packages
   include packages::openssh 
