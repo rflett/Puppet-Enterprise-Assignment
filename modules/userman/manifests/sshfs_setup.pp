@@ -29,7 +29,7 @@ class userman::sshfs_setup {
   $titan_rsa_id_content = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDb0IbwQjMAnQS/lOOsQa6ypgOFZsffJD2OMGlEoqO/yDHwIujIA/iGLclC/OqVHq7XWWd9Z5VzFWshXBrxeqYzS/hGbOwyL1NyKKxKGR1CjmkDEQHyVad7lbK+kaZ+ZUZJpFx9u6B3SuNqY2lTmRensceSzXWuDRSzQw3d7cnKbAttJNBS2NkFfCXQEwwq4N6gpsA291jJ6H8UayessqMicKHUNsnjBy7GfU6QqOQN1fWt94ENPEmNjr07x2/pzPrM1xAuhDntFxridt8QoReF7tszsXCmIE/yWcFWN6EFUnWts4QNsKDEymrmGVjY1nMVJO1xXmkhhVModFgbICD3 s3633011@csitprdap01'
 
   # Contents of the script that mounts the remote dir using the ssh key
-  $titan_script = "#!/bin/bash\nsshfs -o allow_other,IdentityFile=/home/becca/.ssh/titan_id.pub s3633011@titan.csit.rmit.edu.au:/ /home/becca/titan"
+  $titan_script = "#!/bin/bash\sshfs -o allow_other,IdentityFile=/home/becca/.ssh/titan_id.pub s3633011@titan.csit.rmit.edu.au:/ /home/becca/titan"
 
   # Ensure .ssh directory exists
   file { '/home/becca/.ssh':
