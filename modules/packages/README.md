@@ -7,7 +7,6 @@
 3. [Setup - The basics of getting started with packages](#setup)
     * [What packages affects](#what-packages-affects)
 4. [Reference](#reference)
-## Overview
 
 Package installation and configuration.
 
