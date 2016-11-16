@@ -14,8 +14,10 @@
 # Copyright Ryan Flett 2016
 class packages::sshfs {
 
+  # Dependencies for fuse sshfs
   $dependencies = ['fuse', 'fuse-libs-2.9.2-7.el7.x86_64']
 
+  # Install sshfs dependencies
   package { $dependencies :
     ensure => 'present',
   }
