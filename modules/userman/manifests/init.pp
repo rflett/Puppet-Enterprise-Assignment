@@ -58,6 +58,13 @@ class userman {
     require => User['wilma'],
   }
 
+  # Add /bin/csh to list of shells
+  augeas { '/etc/shells':
+    changes => [
+      'set /files/etc/shells[1]/1000 /bin/csh',
+    ],
+  }
+
   # Add user becca
   user { 'becca':
     ensure     => 'present',
@@ -78,6 +85,7 @@ class userman {
     home       => '/home/fred',
     groups     => ['trucks', 'cars', 'wheel'],
     password   => '$6$9D0f3cny4QKXlSRH$sfHCKWH3T5hzcK1QPjiVbZa1W9x4P4XgYRNoxbbfCeXBDJx/9IzyTrRHHKw1tF3gw/HKZoA1OMtlls1KPxHHR/',
+    require    => Augeas['/etc/shells'],
   }
 
   # Add user wilma
